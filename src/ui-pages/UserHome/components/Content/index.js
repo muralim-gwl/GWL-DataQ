@@ -144,7 +144,7 @@ class MiniDrawer extends React.Component {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" color="inherit" noWrap classes={{root:classes.webHeader}}>
-                <span className={classes.userHomeHeader} >MIHY</span>
+                <span className={classes.userHomeHeader} >DataQ</span>
                 <span className={classes.userhomeSubHeader} style={{marginLeft:"8px"}}>Platform</span>
             </Typography>
             <Avatar

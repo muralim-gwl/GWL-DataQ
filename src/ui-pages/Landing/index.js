@@ -7,7 +7,7 @@ class Landing extends React.Component {
     return (
       <div>
         <Typography variant="h2">
-          MIHY all in one react boilerplate
+          DataQ
         </Typography>
         <br/>
         <Button
