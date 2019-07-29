@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="154" height="175" viewBox="0 0 154 175">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="154" height="154" fill="none"/>
+    </clipPath>
+    <filter id="Rectangle_71" x="0" y="0" width="154" height="154" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-opacity="0.078"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Filter_Rows" data-name="Filter Rows" transform="translate(-244 -269)">
+    <text id="Filter_Rows-2" data-name="Filter Rows" transform="translate(321 436)" fill="#444" font-size="24" font-family="Nunito-Regular, Nunito"><tspan x="-60.564" y="0">Filter Rows</tspan></text>
+    <g id="job-bg" transform="translate(244 269)" clip-path="url(#clip-path)">
+      <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Rectangle_71)">
+        <g id="Rectangle_71-2" data-name="Rectangle 71" transform="translate(18 15)" fill="#fff" stroke="#818181" stroke-width="2">
+          <rect width="118" height="118" rx="10" stroke="none"/>
+          <rect x="1" y="1" width="116" height="116" rx="9" fill="none"/>
+        </g>
+      </g>
+    </g>
+    <g id="filter" transform="translate(278 528)">
+      <g id="Group_216" data-name="Group 216" transform="translate(11.001 -217)">
+        <path id="Path_348" data-name="Path 348" d="M40.151-153a4.353,4.353,0,0,1-1.928-.454,4.4,4.4,0,0,1-2.453-3.976v-24.938a4.325,4.325,0,0,0-1.437-3.231L13.47-204.165a7.331,7.331,0,0,1-1.973-8.146A7.094,7.094,0,0,1,18.242-217H67.758a7.094,7.094,0,0,1,6.746,4.689,7.331,7.331,0,0,1-1.973,8.146L51.668-185.6a4.325,4.325,0,0,0-1.437,3.231v20.584a4.474,4.474,0,0,1-1.74,3.535L42.782-153.9A4.321,4.321,0,0,1,40.151-153ZM18.242-213.952a4.119,4.119,0,0,0-3.9,2.726,4.259,4.259,0,0,0,1.152,4.785l20.863,18.567a7.373,7.373,0,0,1,2.458,5.507v24.938a1.351,1.351,0,0,0,.757,1.243,1.254,1.254,0,0,0,1.361-.134l5.707-4.352a1.405,1.405,0,0,0,.541-1.111v-20.584a7.373,7.373,0,0,1,2.458-5.507L70.5-206.441a4.259,4.259,0,0,0,1.152-4.785,4.119,4.119,0,0,0-3.9-2.726Z" transform="translate(-11.001 217)" fill="#444"/>
+      </g>
+    </g>
+  </g>
+</svg>

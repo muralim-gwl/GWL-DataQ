@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="154" height="175" viewBox="0 0 154 175">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="154" height="154" fill="none"/>
+    </clipPath>
+    <filter id="Rectangle_71" x="0" y="0" width="154" height="154" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-opacity="0.078"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_by" data-name="Group by" transform="translate(-34 -269)">
+    <text id="Group_by-2" data-name="Group by" transform="translate(111 436)" fill="#444" font-size="24" font-family="Nunito-Regular, Nunito"><tspan x="-49.356" y="0">Group by</tspan></text>
+    <g id="job-bg" transform="translate(34 269)" clip-path="url(#clip-path)">
+      <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Rectangle_71)">
+        <g id="Rectangle_71-2" data-name="Rectangle 71" transform="translate(18 15)" fill="#fff" stroke="#818181" stroke-width="2">
+          <rect width="118" height="118" rx="10" stroke="none"/>
+          <rect x="1" y="1" width="116" height="116" rx="9" fill="none"/>
+        </g>
+      </g>
+    </g>
+    <g id="Group_245" data-name="Group 245" transform="translate(69.006 300)">
+      <g id="_64_x_64" data-name="64 x 64" transform="translate(57.888 24.639)">
+        <g id="_3d_arrow_right" data-name="3d arrow right" transform="translate(2.679 4.484)">
+          <g id="Group_240" data-name="Group 240">
+            <path id="Path_364" data-name="Path 364" d="M52.517,50.481a1.52,1.52,0,0,1-1.431-2.048c2.84-7.764,3.233-13.615,1.169-17.391-1.418-2.594-3.992-4.274-7.872-5.14a1.523,1.523,0,1,1,.663-2.973c4.72,1.05,8.044,3.288,9.883,6.65,2.54,4.645,2.218,11.154-.983,19.9A1.521,1.521,0,0,1,52.517,50.481Z" transform="translate(-43.19 -22.893)" fill="#444"/>
+          </g>
+        </g>
+        <g id="Group_241" data-name="Group 241">
+          <path id="Path_365" data-name="Path 365" d="M46.207,35.342a1.526,1.526,0,0,1-1.435-1.013l-3.253-9.164a1.525,1.525,0,0,1,.928-1.947l9.013-3.182a1.525,1.525,0,0,1,1.015,2.875L44.9,25.582l2.742,7.726a1.525,1.525,0,0,1-1.437,2.034Z" transform="translate(-41.431 -19.95)" fill="#444"/>
+        </g>
+      </g>
+      <g id="Layer_1" data-name="Layer 1" transform="translate(9.995 11)">
+        <g id="Group_242" data-name="Group 242" transform="translate(18.286)">
+          <path id="Path_366" data-name="Path 366" d="M38.761,32.333H26.568A4.577,4.577,0,0,1,22,27.762V15.571A4.577,4.577,0,0,1,26.568,11H38.761a4.577,4.577,0,0,1,4.57,4.571v12.19A4.577,4.577,0,0,1,38.761,32.333ZM26.568,14.048a1.525,1.525,0,0,0-1.523,1.524v12.19a1.525,1.525,0,0,0,1.523,1.524H38.761a1.525,1.525,0,0,0,1.523-1.524V15.571a1.525,1.525,0,0,0-1.523-1.524Z" transform="translate(-21.998 -11)" fill="#444"/>
+        </g>
+        <g id="Group_243" data-name="Group 243" transform="translate(0 42.667)">
+          <path id="Path_367" data-name="Path 367" d="M26.758,60.333H14.565A4.577,4.577,0,0,1,10,55.762V43.571A4.577,4.577,0,0,1,14.565,39H26.758a4.577,4.577,0,0,1,4.57,4.571v12.19A4.577,4.577,0,0,1,26.758,60.333ZM14.565,42.048a1.525,1.525,0,0,0-1.523,1.524v12.19a1.525,1.525,0,0,0,1.523,1.524H26.758a1.525,1.525,0,0,0,1.523-1.524V43.571a1.525,1.525,0,0,0-1.523-1.524Z" transform="translate(-9.995 -39)" fill="#444"/>
+        </g>
+        <g id="Group_244" data-name="Group 244" transform="translate(27.43 42.667)">
+          <path id="Path_368" data-name="Path 368" d="M44.761,60.333H32.57A4.576,4.576,0,0,1,28,55.762V43.571A4.576,4.576,0,0,1,32.57,39H44.761a4.576,4.576,0,0,1,4.57,4.571v12.19A4.576,4.576,0,0,1,44.761,60.333ZM32.57,42.048a1.524,1.524,0,0,0-1.523,1.524v12.19a1.524,1.524,0,0,0,1.523,1.524H44.761a1.524,1.524,0,0,0,1.523-1.524V43.571a1.524,1.524,0,0,0-1.523-1.524Z" transform="translate(-28 -39)" fill="#444"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

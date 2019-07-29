@@ -5,7 +5,7 @@ export default {
   },
   palette: {
     primary: {
-      main: "#d81b60",
+      main: "#5EA9FF",
       contrastText: "#fff",
     }
   }

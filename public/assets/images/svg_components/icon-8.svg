@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="10" height="10" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="icon" transform="translate(-1234 -865)">
+    <path id="Rectangle_13" data-name="Rectangle 13" d="M4,0h8A12,12,0,0,1,24,12v0A12,12,0,0,1,12,24H4a4,4,0,0,1-4-4V4A4,4,0,0,1,4,0Z" transform="translate(1234 865)" fill="#ff5b5b"/>
+    <g id="Filuer-icon" transform="translate(1240 872)" clip-path="url(#clip-path)">
+      <path id="Path_14" data-name="Path 14" d="M56.329,33.934l3.632-3.661a.771.771,0,0,0-.028-1.12.848.848,0,0,0-1.166.027l-3.578,3.606L51.61,29.18a.848.848,0,0,0-1.166-.027.77.77,0,0,0-.028,1.12l3.632,3.661-3.632,3.66a.771.771,0,0,0,.028,1.121.849.849,0,0,0,1.166-.027l3.579-3.606,3.578,3.606a.849.849,0,0,0,1.166.027.771.771,0,0,0,.028-1.121Z" transform="translate(-50.189 -28.934)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

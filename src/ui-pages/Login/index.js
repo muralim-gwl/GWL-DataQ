@@ -1,5 +1,4 @@
 import React from "react";
-import LoginContainer from "./components/LoginContainer";
 import { withStyles } from "@material-ui/core/styles";
 
 const styles = {
@@ -14,7 +13,7 @@ class Login extends React.Component {
     const { classes, ...rest } = this.props;
     return (
       <div className={classes.root}>
-        <LoginContainer/>
+        Login
       </div>
     );
   }

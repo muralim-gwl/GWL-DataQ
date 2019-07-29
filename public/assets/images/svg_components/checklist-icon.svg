@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="41.539" height="37" viewBox="0 0 41.539 37">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="41.539" height="37" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="checklist-icon" transform="translate(0)" clip-path="url(#clip-path)">
+    <g id="Group_37" data-name="Group 37" transform="translate(-11.461 -13.551)">
+      <path id="Path_37" data-name="Path 37" d="M15.034,23.551a1,1,0,0,1-.609-.207l-2.573-1.976a1,1,0,0,1,1.218-1.586L14.8,21.111l4.832-7.122a1,1,0,0,1,1.654,1.123l-5.427,8a1,1,0,0,1-.668.426A.939.939,0,0,1,15.034,23.551Z" fill="#444"/>
+    </g>
+    <g id="Group_38" data-name="Group 38" transform="translate(-11.461 -13.551)">
+      <path id="Path_38" data-name="Path 38" d="M52,20H30a1,1,0,0,1,0-2H52a1,1,0,0,1,0,2Z" fill="#444"/>
+    </g>
+    <g id="Group_39" data-name="Group 39" transform="translate(-11.461 -13.551)">
+      <path id="Path_39" data-name="Path 39" d="M15.034,36.551a1,1,0,0,1-.609-.207l-2.573-1.976a1,1,0,1,1,1.218-1.586L14.8,34.111l4.832-7.122a1,1,0,0,1,1.654,1.123l-5.427,8a1,1,0,0,1-.668.426A.939.939,0,0,1,15.034,36.551Z" fill="#444"/>
+    </g>
+    <g id="Group_40" data-name="Group 40" transform="translate(-11.461 -13.551)">
+      <path id="Path_40" data-name="Path 40" d="M52,33H30a1,1,0,0,1,0-2H52a1,1,0,0,1,0,2Z" fill="#444"/>
+    </g>
+    <g id="Group_41" data-name="Group 41" transform="translate(-11.461 -13.551)">
+      <path id="Path_41" data-name="Path 41" d="M15.034,50.551a1,1,0,0,1-.609-.207l-2.573-1.976a1,1,0,1,1,1.218-1.586L14.8,48.111l4.832-7.122a1,1,0,0,1,1.654,1.123l-5.427,8a1,1,0,0,1-.668.426A.939.939,0,0,1,15.034,50.551Z" fill="#444"/>
+    </g>
+    <g id="Group_42" data-name="Group 42" transform="translate(-11.461 -13.551)">
+      <path id="Path_42" data-name="Path 42" d="M52,47H30a1,1,0,0,1,0-2H52a1,1,0,0,1,0,2Z" fill="#444"/>
+    </g>
+  </g>
+</svg>

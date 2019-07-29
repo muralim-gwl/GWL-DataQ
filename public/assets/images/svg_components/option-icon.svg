@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34" height="34" viewBox="0 0 34 34">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="34" height="34" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="option-icon" clip-path="url(#clip-path)">
+    <circle id="Ellipse_35" data-name="Ellipse 35" cx="4" cy="4" r="4" transform="translate(11 26)" fill="#5ea9ff"/>
+    <circle id="Ellipse_36" data-name="Ellipse 36" cx="4" cy="4" r="4" transform="translate(21 13)" fill="#5ea9ff"/>
+    <circle id="Ellipse_37" data-name="Ellipse 37" cx="4" cy="4" r="4" transform="translate(5)" fill="#5ea9ff"/>
+    <path id="Path_44" data-name="Path 44" d="M48,20H16a1,1,0,0,1,0-2H48a1,1,0,0,1,0,2Z" transform="translate(-15 -15)" fill="#5ea9ff"/>
+    <path id="Path_45" data-name="Path 45" d="M48,33H16a1,1,0,0,1,0-2H48a1,1,0,0,1,0,2Z" transform="translate(-15 -15)" fill="#5ea9ff"/>
+    <path id="Path_46" data-name="Path 46" d="M48,46H16a1,1,0,0,1,0-2H48a1,1,0,0,1,0,2Z" transform="translate(-15 -15)" fill="#5ea9ff"/>
+  </g>
+</svg>

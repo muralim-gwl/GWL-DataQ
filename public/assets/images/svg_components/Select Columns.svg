@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="166" height="175" viewBox="0 0 166 175">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="154" height="154" fill="none"/>
+    </clipPath>
+    <filter id="Rectangle_71" x="6" y="0" width="154" height="154" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-opacity="0.078"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Select_Columns" data-name="Select Columns" transform="translate(-238 -269)">
+    <text id="Select_Columns-2" data-name="Select Columns" transform="translate(321 436)" fill="#444" font-size="24" font-family="Nunito-Regular, Nunito"><tspan x="-82.752" y="0">Select Columns</tspan></text>
+    <g id="job-bg" transform="translate(244 269)" clip-path="url(#clip-path)">
+      <g transform="matrix(1, 0, 0, 1, -6, 0)" filter="url(#Rectangle_71)">
+        <g id="Rectangle_71-2" data-name="Rectangle 71" transform="translate(24 15)" fill="#fff" stroke="#818181" stroke-width="2">
+          <rect width="118" height="118" rx="10" stroke="none"/>
+          <rect x="1" y="1" width="116" height="116" rx="9" fill="none"/>
+        </g>
+      </g>
+    </g>
+    <g id="Group_215" data-name="Group 215" transform="translate(507 528)">
+      <g id="_64_x_64" data-name="64 x 64" transform="translate(-193.685 -182.936)">
+        <g id="Group_212" data-name="Group 212">
+          <path id="Path_345" data-name="Path 345" d="M-187.6-174.837a1.519,1.519,0,0,1-1.022-.393l-7.761-7.023a1.523,1.523,0,0,1-.108-2.152,1.525,1.525,0,0,1,2.153-.107l6.558,5.934,12.39-15.5a1.525,1.525,0,0,1,2.142-.239,1.525,1.525,0,0,1,.238,2.142l-13.4,16.762a1.535,1.535,0,0,1-1.068.568C-187.522-174.837-187.563-174.837-187.6-174.837Z" transform="translate(196.887 194.646)" fill="#444"/>
+        </g>
+      </g>
+      <g id="Layer_1" data-name="Layer 1" transform="translate(-203 -217)">
+        <g id="Group_213" data-name="Group 213">
+          <path id="Path_346" data-name="Path 346" d="M-186.238-195.667h-12.19A4.577,4.577,0,0,1-203-200.238v-12.19A4.577,4.577,0,0,1-198.429-217h12.19a4.577,4.577,0,0,1,4.571,4.571v12.19A4.577,4.577,0,0,1-186.238-195.667Zm-12.19-18.286a1.525,1.525,0,0,0-1.524,1.524v12.19a1.525,1.525,0,0,0,1.524,1.524h12.19a1.525,1.525,0,0,0,1.524-1.524v-12.19a1.525,1.525,0,0,0-1.524-1.524Z" transform="translate(203 217)" fill="#444"/>
+        </g>
+        <g id="Group_214" data-name="Group 214" transform="translate(0 42.667)">
+          <path id="Path_347" data-name="Path 347" d="M-185.019-167.667h-14.629A3.356,3.356,0,0,1-203-171.019v-14.629A3.356,3.356,0,0,1-199.648-189a1.523,1.523,0,0,1,1.524,1.524,1.523,1.523,0,0,1-1.524,1.524.306.306,0,0,0-.3.3v14.629a.306.306,0,0,0,.3.3h14.629a.306.306,0,0,0,.3-.3,1.523,1.523,0,0,1,1.524-1.524,1.523,1.523,0,0,1,1.524,1.524A3.356,3.356,0,0,1-185.019-167.667Z" transform="translate(203 189)" fill="#444"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
