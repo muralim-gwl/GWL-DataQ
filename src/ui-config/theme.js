@@ -7,6 +7,10 @@ export default {
     primary: {
       main: "#5EA9FF",
       contrastText: "#fff",
+    },
+    secondary: {
+      main: "#00e676",
+      contrastText: "#fff",
     }
   }
 }

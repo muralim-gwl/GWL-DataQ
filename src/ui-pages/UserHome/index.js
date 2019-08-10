@@ -10,7 +10,7 @@ const styles = {
   root: {}
 };
 
-class VideoPage extends Component {
+class UserHome extends Component {
 
   render() {
     const { classes } = this.props;
@@ -25,4 +25,4 @@ class VideoPage extends Component {
 export default connect(
   null,
   mapDispatchToProps
-)(withStyles(styles)(VideoPage));
+)(withStyles(styles)(UserHome));

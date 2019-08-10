@@ -9,7 +9,7 @@ const intialState = {
       message:""
     },
     spinner:false
-  },
+  }
 };
 
 const screenConfiguration = (state = intialState, action) => {
