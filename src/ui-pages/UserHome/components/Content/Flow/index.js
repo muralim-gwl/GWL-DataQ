@@ -8,6 +8,7 @@ import flowComponents from "../../../../../ui-config/flowComponents";
 import Component from "./components/Component";
 import DropLocation from "./components/DropLocation";
 import jsplumb from "jsplumb";
+import $ from "jquery"
 const { jsPlumb } = jsplumb;
 const firstInstance = jsPlumb.getInstance();
 
@@ -76,6 +77,22 @@ class Flow extends React.Component {
               isSource: hasOutput,
               isTarget: hasInput,
               connector: "Flowchart",
+              connectorOverlays: [  [ "Arrow", {location:1 } ], ["Custom", {
+                    create: function (component) {
+                        return $('<img style="display:block;background-color:transparent;" src="/assets/images/svg_components/delete connection.svg">');
+                    },
+                    location: 0.5,
+                    cssClass: 'delete-connection',
+                    events:{
+                        click:function(params) {
+                            console.log(params);
+                            console.log(firstInstance);
+                            firstInstance.deleteConnectionsForElement(params.component.sourceId,params);
+                        }
+                    }
+                }]
+              ]
+       ,
               maxConnections
       };
       firstInstance.draggable(`copy-component-${previousLength}`);
@@ -87,7 +104,8 @@ class Flow extends React.Component {
         );
       }
       if (hasInput) {
-        common.endpoint="Rectangle";
+        // common.endpoint=["Image",{ src:"" }];
+        // common.endpoint="Rectangle";
         firstInstance.addEndpoint(
           `copy-component-${previousLength}`,
           { anchor: "Left" },

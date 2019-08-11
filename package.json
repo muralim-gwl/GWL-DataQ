@@ -7,6 +7,7 @@
     "@material-ui/icons": "^4.2.1",
     "axios": "^0.19.0",
     "classnames": "^2.2.6",
+    "jquery": "^3.4.1",
     "jsplumb": "^2.11.1",
     "lodash": "^4.17.14",
     "proptypes": "^1.1.0",
