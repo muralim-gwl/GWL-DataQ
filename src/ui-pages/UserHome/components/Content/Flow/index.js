@@ -57,6 +57,7 @@ class Flow extends React.Component {
     containerTab:true,
     dataTab:false,
     columnTab:'',
+    table:'',
     filterTab:false
   };
   
@@ -136,11 +137,11 @@ class Flow extends React.Component {
 
     }
   }
-  showFilterTable=()=>{
-    this.setState({
-      filterTab:!this.state.filterTab
-    })
-  }
+  // showFilterTable=()=>{
+  //   this.setState({
+  //     filterTab:this.state.filterTab
+  //   })
+  // }
 
   showConfig=()=>{
     this.setState({
@@ -160,11 +161,15 @@ class Flow extends React.Component {
       ...this.state,
       [name]: event.target.value,
     });
+    if(name=='table'){
+      this.setState({filterTab:true})
+    }
   };
 
   render() {
+    console.log('this is filterTab', this.state.filterTab);
     const { classes } = this.props;
-    const { copyFlowComponents, containerTab, dataTab, columnTab, filterTab } = this.state;
+    const { copyFlowComponents, containerTab, dataTab, columnTab, table, filterTab } = this.state;
     const { moveComponent, showData, showConfig } = this;
     return (
       <div className={classes.root}>
@@ -200,15 +205,33 @@ class Flow extends React.Component {
         </DndProvider>
         <div className='dataContainer'>
           <div className='containerTab'>
-             <div onClick={showConfig} className='configureTab'>Configure</div>
-             <div onClick={showData} className='dataTab'>Data</div>
+             <div onClick={showConfig} className={containerTab?'configureTab active':'configureTab inactive'}>Configure</div>
+             <div onClick={showData} className={dataTab?'dataTab active':'dataTab inactive'}>Data</div>
           </div>
           <div className={containerTab?'show containerDisplay' :'hide'}>
             <div className='displayHeader'>Select Data source which will connect jobs with it</div>
             <div className='subContainerDisplay'>
               <div className='subTab'>Select</div>
-              <button>File From Local</button>
-              <button onClick={this.showFilterTable}>Data Source Connection</button>
+              {/* <button onClick={this.showFilterTable}>Data Source Connection</button> */}
+              <FormControl variant="outlined"  className={classes.formControl}>
+              <NativeSelect 
+                className={classes.selectEmpty}
+                value={table}
+                name="table"
+                onChange={this.handleDropDown('table')}
+                input={
+                  <OutlinedInput classes={{ input: classes.input }} />
+                }
+                
+              >
+                <option value="" disabled>
+                  Data Source Connection
+                </option>
+                <option value={10}>Table 1</option>
+                <option value={20}>Table 2</option>
+                <option value={30}>Table 3</option>
+              </NativeSelect>
+              </FormControl>
             </div>
             {filterTab ? <FilterTable />:''}
           </div>
