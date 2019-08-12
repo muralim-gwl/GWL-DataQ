@@ -4,19 +4,11 @@ import HTML5Backend from "react-dnd-html5-backend";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import { withStyles } from "@material-ui/core/styles";
-import NativeSelect from '@material-ui/core/NativeSelect';
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-import { makeStyles } from '@material-ui/core/styles';
 import flowComponents from "../../../../../ui-config/flowComponents";
 import Component from "./components/Component";
 import DropLocation from "./components/DropLocation";
 import jsplumb from "jsplumb";
 import $ from "jquery"
-import './dashboard.css';
-import DataSourceTable from '../../../../../ui-containers/dataSourceTable';
-import FilterTable from '../../../../../ui-containers/filterTable';
 const { jsPlumb } = jsplumb;
 const firstInstance = jsPlumb.getInstance();
 
@@ -37,13 +29,6 @@ const styles = theme => ({
     minHeight: "85vh",
     overflow: "scroll",
     position: "relative"
-  },
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 220,
-  },
-  input: {
-    padding: "10px 14px"
   }
 });
 
@@ -53,13 +38,8 @@ var previousLength = -1;
 
 class Flow extends React.Component {
   state = {
-    copyFlowComponents: [],
-    containerTab:true,
-    dataTab:false,
-    columnTab:'',
-    filterTab:false
+    copyFlowComponents: []
   };
-  
 
   moveComponent = (index, top, left, copyComponent) => {
     let { copyFlowComponents = [] } = this.state;
@@ -136,36 +116,12 @@ class Flow extends React.Component {
 
     }
   }
-  showFilterTable=()=>{
-    this.setState({
-      filterTab:!this.state.filterTab
-    })
-  }
-
-  showConfig=()=>{
-    this.setState({
-      containerTab:true,
-      dataTab:false
-    });
-  }
-  
-  showData=()=>{
-    this.setState({
-      containerTab:false,
-      dataTab:true
-    });
-  }
-  handleDropDown = name => event => {
-    this.setState({
-      ...this.state,
-      [name]: event.target.value,
-    });
-  };
 
   render() {
     const { classes } = this.props;
-    const { copyFlowComponents, containerTab, dataTab, columnTab, filterTab } = this.state;
-    const { moveComponent, showData, showConfig } = this;
+    const { copyFlowComponents } = this.state;
+    const { moveComponent } = this;
+    console.log("copyFlowComponents", copyFlowComponents);
     return (
       <div className={classes.root}>
         <DndProvider backend={HTML5Backend}>
@@ -198,47 +154,6 @@ class Flow extends React.Component {
             </Grid>
           </Grid>
         </DndProvider>
-        <div className='dataContainer'>
-          <div className='containerTab'>
-             <div onClick={showConfig} className='configureTab'>Configure</div>
-             <div onClick={showData} className='dataTab'>Data</div>
-          </div>
-          <div className={containerTab?'show containerDisplay' :'hide'}>
-            <div className='displayHeader'>Select Data source which will connect jobs with it</div>
-            <div className='subContainerDisplay'>
-              <div className='subTab'>Select</div>
-              <button>File From Local</button>
-              <button onClick={this.showFilterTable}>Data Source Connection</button>
-            </div>
-            {filterTab ? <FilterTable />:''}
-          </div>
-          <div className={dataTab?'show':'hide'}>
-            <div className='dataDisplayTab'>
-              <span>Search Table</span>
-              <FormControl variant="outlined"  className={classes.formControl}>
-              <NativeSelect 
-                className={classes.selectEmpty}
-                value={columnTab}
-                name="columnTab"
-                onChange={this.handleDropDown('columnTab')}
-                input={
-                  <OutlinedInput classes={{ input: classes.input }} />
-                }
-                
-              >
-                <option value="" disabled>
-                  Select Table
-                </option>
-                <option value={10}>T</option>
-                <option value={20}>Twenty</option>
-                <option value={30}>Thirty</option>
-              </NativeSelect>
-              </FormControl>
-              <span>20 Tables</span>
-            </div>
-            <DataSourceTable />
-          </div>
-        </div>
       </div>
     );
   }

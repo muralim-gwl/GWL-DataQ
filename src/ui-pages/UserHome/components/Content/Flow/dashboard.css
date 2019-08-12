@@ -1,0 +1,80 @@
+.dataContainer{
+    position:fixed;
+    bottom:0;
+    background:white;
+    width:99.5%;
+}
+
+.containerTab{
+    display: flex;
+    padding: 0% 29%;
+    background: #eaeaea;
+}
+
+.configureTab{
+    background: white;
+    padding: 1% 2%;
+    border-top-left-radius: 6px;
+    font-size: 17px;
+    font-weight: 500;
+    width: 17%;
+    cursor: pointer;
+}
+
+.dataTab{
+    background: grey;
+    padding: 1% 4%;
+    width: 17%;
+    border-top-right-radius: 6px;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.displayHeader{
+    font-size: 16px;
+    padding: 1% 2%;
+    color: #989898;
+}
+
+.subContainerDisplay{
+    display: flex;
+    padding: 1% 2%;
+}
+
+.subTab{
+    font-size: 17px;
+    padding-right: 3%;
+    color: #434444;
+}
+
+.subContainerDisplay button{
+    background: white;
+    border-radius: 3px;
+    border: 0;
+    box-shadow: 1px 1px 6px #d0d0d0;
+    color: #616161;
+    padding: 0.4% 1%;
+    font-size: 14px;
+    margin-right: 2%;
+}
+.containerDisplay{
+    height: 351px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.scrollable-element {
+    scrollbar-width: 100px;
+  }
+
+  .dataDisplayTab{
+      display: flex;
+  }
+
+  .dataDisplayTab span{
+    font-size: 14px;
+    padding: 0px 9px;
+    text-align: center;
+    padding-top: 1%;
+  }
