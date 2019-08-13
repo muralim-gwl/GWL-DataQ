@@ -1,6 +1,6 @@
 import {prepareFinalObject} from "../ui-redux/screen-configuration/actions";
 
-export const addQueryArg = (url, queries = []) => {
+export const addQueryArg = (url="", queries = []) => {
   const urlParts = url.split("?");
   const path = urlParts[0];
   let queryParts = urlParts.length > 1 ? urlParts[1].split("&") : [];

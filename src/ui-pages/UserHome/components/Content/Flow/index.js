@@ -17,6 +17,10 @@ import $ from "jquery"
 import './dashboard.css';
 import DataSourceTable from '../../../../../ui-containers/dataSourceTable';
 import FilterTable from '../../../../../ui-containers/filterTable';
+import {mapDispatchToProps} from "../../../../../ui-utils/commons";
+import {httpRequest} from "../../../../../ui-utils/api";
+import {connect} from "react-redux";
+
 const { jsPlumb } = jsplumb;
 const firstInstance = jsPlumb.getInstance();
 
@@ -35,6 +39,7 @@ const styles = theme => ({
   },
   content: {
     minHeight: "85vh",
+    width:"100%",
     overflow: "scroll",
     position: "relative"
   },
@@ -85,8 +90,40 @@ class Flow extends React.Component {
     });
   };
 
-  componentDidMount() {
+  componentDidMount=async()=> {
     firstInstance.setContainer(document.getElementById("drop-location"));
+    let requestBody={
+      ajax:"getAll"
+    };
+    const allConnectionResponse=await httpRequest({endPoint:"/jdbcdataservlet",method:"post",requestBody});
+    console.log("get all connection",allConnectionResponse);
+
+    requestBody={
+      ajax:"get",
+      action:"getAllSchemas",
+      connectionName:"my_table"
+    };
+    const allDatabaseResponse=await httpRequest({endPoint:"/JDBCDeatilsServlet",method:"post",requestBody});
+    console.log("get all database tables",allDatabaseResponse);
+
+    requestBody={
+      ajax:"get",
+      action:"getAllTables",
+      connectionName:"my_table",
+      dataBasename:"azkaban"
+    };
+    const allTablesResponse=await httpRequest({endPoint:"/JDBCDeatilsServlet",method:"post",requestBody});
+    console.log("get all tables",allTablesResponse);
+
+    requestBody={
+      ajax:"get",
+      action:"getAllColumns",
+      connectionName:"my_table",
+      dataBasename:"azkaban",
+      table:"job_dv_results"
+    };
+    const allSampleResponse=await httpRequest({endPoint:"/JDBCDeatilsServlet",method:"post",requestBody});
+    console.log("get sample data",allSampleResponse);
   }
 
   componentDidUpdate() {
@@ -266,4 +303,8 @@ class Flow extends React.Component {
   }
 }
 
-export default withStyles(styles)(Flow);
+const mapStateToProps=()=>{
+  return {}
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(withStyles(styles)(Flow));
