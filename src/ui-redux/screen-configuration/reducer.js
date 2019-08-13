@@ -1,6 +1,11 @@
 import * as screenActionTypes from "./actionTypes";
 import { updateObjectWithComponentJsonPath, prepareFinalObject } from "./utils";
 
+const getUserInfo=()=>{
+  const userInfo=window.localStorage.getItem("userInfo");
+  return userInfo?JSON.parse(userInfo):{}
+}
+
 const intialState = {
   preparedFinalObject: {
     snackbar:{
@@ -8,7 +13,8 @@ const intialState = {
       variant:"success",
       message:""
     },
-    spinner:false
+    spinner:false,
+    userInfo:getUserInfo()
   }
 };
 
