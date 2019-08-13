@@ -167,7 +167,6 @@ class Flow extends React.Component {
   };
 
   render() {
-    console.log('this is filterTab', this.state.filterTab);
     const { classes } = this.props;
     const { copyFlowComponents, containerTab, dataTab, columnTab, table, filterTab } = this.state;
     const { moveComponent, showData, showConfig } = this;

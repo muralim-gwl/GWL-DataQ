@@ -23,7 +23,7 @@ class FilterTable extends React.Component {
   filterTable = (e) =>{
       const searchText = e.target.value;
       if(searchText.length == 0){
-          this.setState({data:this.state.dataDefault})
+          this.setState({data:this.state.dataDefault, checked:[],optionsChecked:[]})
       }else{
         let res = [];
         let backSearchHandle = this.state.dataDefault;
@@ -39,24 +39,27 @@ class FilterTable extends React.Component {
     var newArr =[];
     const checked = this.state.checked.every((i)=>i==true);
     if(this.state.checked.length ==0){
-      for(let i =0; i<this.state.dataDefault.length; i++ ){
+      for(let i =0; i<this.state.data.length; i++ ){
         newArr.push(true);
       }
+      this.setState({optionsChecked:this.state.dataDefault})
     } 
-    else if(checked){this.setState({optionsChecked:['']})}
+    else if(checked){
+      this.setState({optionsChecked:[]})
+    }
     else{
-      for(let i =0; i<this.state.dataDefault.length; i++ ){
+      for(let i =0; i<this.state.data.length; i++ ){
         newArr.push(true);
       }
+      this.setState({optionsChecked:this.state.dataDefault})
     }
-    this.setState({checked:newArr,optionsChecked:this.state.dataDefault})
+    this.setState({checked:newArr})
   }
 
   handleUncheck =(e,i)=>{
      const newArr = this.state.checked;
-     const selectedArr = this.state.optionsChecked;
+     var selectedArr = [...this.state.optionsChecked];
      newArr[i] = !this.state.checked[i];
-    
      this.setState({checked:newArr});
 
      if (e.target.checked === true) {
@@ -67,7 +70,6 @@ class FilterTable extends React.Component {
     } else {
       let valueIndex = selectedArr.indexOf(e.target.value);
       selectedArr.splice(valueIndex, 1);
-        
         this.setState({
           optionsChecked: selectedArr
         });
