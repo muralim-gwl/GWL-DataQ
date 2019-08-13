@@ -11,13 +11,21 @@ import PropTypes from 'prop-types';
 const SampleColumn = ['Column 1', 'Column 2', 'Column 3', 'Column 4', 'Column 5', 'Column 6', 'Column 7']
 
 class FilterTable extends React.Component {
-
+ 
   state ={
-      dataDefault : SampleColumn,
-      data:SampleColumn,
+      dataDefault : '',
+      data:'',
       checked:[],
       optionsChecked:[]
 
+  }
+  componentWillMount=()=>{
+    console.log('this is filter tab', this.props.columnFilter);
+    this.setState({dataDefault:this.props.columnFilter, data: this.props.columnFilter })
+  }
+  componentWillReceiveProps=(nextProps)=>{
+    console.log('this is filter PROPS', nextProps.columnFilter);
+    this.setState({dataDefault:nextProps.columnFilter, data: nextProps.columnFilter })
   }
 
   filterTable = (e) =>{

@@ -63,7 +63,7 @@ class Flow extends React.Component {
     dataTab:false,
     columnTab:'',
     table:'',
-    filterTab:false
+    filterTab:false,
   };
   
 
@@ -91,20 +91,22 @@ class Flow extends React.Component {
   };
 
   componentDidMount=async()=> {
+    const { setAppData } = this.props;
     firstInstance.setContainer(document.getElementById("drop-location"));
     let requestBody={
       ajax:"getAll"
     };
     const allConnectionResponse=await httpRequest({endPoint:"/jdbcdataservlet",method:"post",requestBody});
     console.log("get all connection",allConnectionResponse);
+    setAppData('connections', allConnectionResponse);
 
-    requestBody={
-      ajax:"get",
-      action:"getAllSchemas",
-      connectionName:"my_table"
-    };
-    const allDatabaseResponse=await httpRequest({endPoint:"/JDBCDeatilsServlet",method:"post",requestBody});
-    console.log("get all database tables",allDatabaseResponse);
+    // requestBody={
+    //   ajax:"get",
+    //   action:"getAllSchemas",
+    //   connectionName:"my_table"
+    // };
+    // const allDatabaseResponse=await httpRequest({endPoint:"/JDBCDeatilsServlet",method:"post",requestBody});
+    // console.log("get all database tables",allDatabaseResponse);
 
     requestBody={
       ajax:"get",
@@ -174,11 +176,6 @@ class Flow extends React.Component {
 
     }
   }
-  // showFilterTable=()=>{
-  //   this.setState({
-  //     filterTab:this.state.filterTab
-  //   })
-  // }
 
   showConfig=()=>{
     this.setState({
@@ -193,18 +190,31 @@ class Flow extends React.Component {
       dataTab:true
     });
   }
-  handleDropDown = name => event => {
-    this.setState({
-      ...this.state,
-      [name]: event.target.value,
-    });
+  
+  handleDropDown = name => async event =>{
     if(name=='table'){
-      this.setState({filterTab:true})
+      console.log('event target value', event.target.value);
+         
+      this.setState({
+        ...this.state,
+        [name]: event.target.value,
+      });
+        const { setAppData } = this.props;
+        let requestBody={
+          ajax:"get",
+          action:"getAllSchemas",
+          connectionName:event.target.value,
+          dataBasename:"azkaban",
+          table:"job_dv_results"
+        };
+        const allDatabaseResponse=await httpRequest({endPoint:"/JDBCDeatilsServlet",method:"post",requestBody});
+        setAppData('columnFilter', allDatabaseResponse );
+        this.setState({filterTab:true})
     }
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, connections, columnFilter } = this.props;
     const { copyFlowComponents, containerTab, dataTab, columnTab, table, filterTab } = this.state;
     const { moveComponent, showData, showConfig } = this;
     return (
@@ -263,13 +273,12 @@ class Flow extends React.Component {
                 <option value="" disabled>
                   Data Source Connection
                 </option>
-                <option value={10}>Table 1</option>
-                <option value={20}>Table 2</option>
-                <option value={30}>Table 3</option>
+                {connections.length>0 && 
+                connections.map(item=> <option value={item.connectionName}>{item.connectionName}</option>)}
               </NativeSelect>
               </FormControl>
             </div>
-            {filterTab ? <FilterTable />:''}
+            {filterTab ? <FilterTable columnFilter={columnFilter}/>:''}
           </div>
           <div className={dataTab?'show':'hide'}>
             <div className='dataDisplayTab'>
@@ -303,8 +312,12 @@ class Flow extends React.Component {
   }
 }
 
-const mapStateToProps=()=>{
-  return {}
+const mapStateToProps=({screenConfiguration={}})=>{
+  const {preparedFinalObject={}}=screenConfiguration;
+  const {connections={},columnFilter={}}=preparedFinalObject;
+  return {
+    connections, columnFilter
+  }
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(withStyles(styles)(Flow));
