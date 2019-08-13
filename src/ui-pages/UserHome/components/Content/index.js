@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Avatar from "@material-ui/core/Avatar";
+import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
@@ -66,7 +66,10 @@ class MiniDrawer extends React.Component {
               src="https://firebasestorage.googleapis.com/v0/b/mihy-all.appspot.com/o/WhatsApp%20Image%202019-02-23%20at%209.37.56%20PM.jpeg?alt=media&token=fa3d29e1-7dc2-429e-89b1-b9aa677ea91d"
               className={classes.avatar}
             />*/}
-
+            <Button onClick={(e)=>{
+              window.localStorage.clear();
+              history.push("/")
+            }}>Logout</Button>
           </Toolbar>
         </AppBar>
         <div className={classes.content}>
