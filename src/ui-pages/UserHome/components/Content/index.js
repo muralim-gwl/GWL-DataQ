@@ -69,6 +69,7 @@ class MiniDrawer extends React.Component {
             <Button onClick={(e)=>{
               window.localStorage.clear();
               history.push("/")
+              window.location.reload()
             }}>Logout</Button>
           </Toolbar>
         </AppBar>
