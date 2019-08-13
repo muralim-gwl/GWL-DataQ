@@ -6,9 +6,10 @@ import IconButton from "@material-ui/core/IconButton";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import SearchIcon from "@material-ui/icons/Search";
 import TextField from '@material-ui/core/TextField';
+import {mapDispatchToProps} from "../../ui-utils/commons";
+import {connect} from "react-redux";
 import PropTypes from 'prop-types';
 
-const SampleColumn = ['Column 1', 'Column 2', 'Column 3', 'Column 4', 'Column 5', 'Column 6', 'Column 7']
 
 class FilterTable extends React.Component {
  
@@ -86,6 +87,8 @@ class FilterTable extends React.Component {
      
   }
   addSelectedColumn = ()=>{
+    const { setAppData } = this.props;
+    setAppData('dataDropDown', this.state.optionsChecked);
   }
 
   render() {
@@ -145,5 +148,12 @@ FilterTable.propTypes = {
   //classes: PropTypes.object.isRequired,
 };
 
+const mapStateToProps=({screenConfiguration={}})=>{
+  const {preparedFinalObject={}}=screenConfiguration;
+  const {connections={},columnFilter={}}=preparedFinalObject;
+  return {
+    
+  }
+}
 
-export default FilterTable;
+export default connect(mapStateToProps,mapDispatchToProps)(FilterTable);

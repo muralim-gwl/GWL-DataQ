@@ -211,10 +211,16 @@ class Flow extends React.Component {
         setAppData('columnFilter', allDatabaseResponse );
         this.setState({filterTab:true})
     }
+    if(name=='columnTab'){
+      this.setState({
+        ...this.state,
+        [name]: event.target.value,
+      });
+    }
   };
 
   render() {
-    const { classes, connections, columnFilter } = this.props;
+    const { classes, connections, columnFilter, dataDropDown } = this.props;
     const { copyFlowComponents, containerTab, dataTab, columnTab, table, filterTab } = this.state;
     const { moveComponent, showData, showConfig } = this;
     return (
@@ -297,12 +303,12 @@ class Flow extends React.Component {
                 <option value="" disabled>
                   Select Table
                 </option>
-                <option value={10}>T</option>
-                <option value={20}>Twenty</option>
-                <option value={30}>Thirty</option>
+                {dataDropDown.length>0 && dataDropDown.map((item,i)=>
+                  <option value={item} key={i}>{item}</option>
+                )}
               </NativeSelect>
               </FormControl>
-              <span>20 Tables</span>
+              <span>{dataDropDown.length>0? dataDropDown.length + ' Tables': '0 Tables'} </span>
             </div>
             <DataSourceTable />
           </div>
@@ -314,9 +320,9 @@ class Flow extends React.Component {
 
 const mapStateToProps=({screenConfiguration={}})=>{
   const {preparedFinalObject={}}=screenConfiguration;
-  const {connections={},columnFilter={}}=preparedFinalObject;
+  const {connections={},columnFilter={},dataDropDown={}}=preparedFinalObject;
   return {
-    connections, columnFilter
+    connections, columnFilter, dataDropDown
   }
 }
 
