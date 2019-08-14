@@ -21,12 +21,12 @@ class FilterTable extends React.Component {
 
   }
   componentWillMount=()=>{
-    console.log('this is filter tab', this.props.columnFilter);
-    this.setState({dataDefault:this.props.columnFilter, data: this.props.columnFilter })
+    console.log('this is filter tab', this.props.dataTableFilter);
+    this.setState({dataDefault:this.props.dataTableFilter, data: this.props.dataTableFilter })
   }
   componentWillReceiveProps=(nextProps)=>{
-    console.log('this is filter PROPS', nextProps.columnFilter);
-    this.setState({dataDefault:nextProps.columnFilter, data: nextProps.columnFilter })
+    console.log('this is filter PROPS', nextProps.dataTableFilter);
+    this.setState({dataDefault:nextProps.dataTableFilter, data: nextProps.dataTableFilter })
   }
 
   filterTable = (e) =>{
@@ -119,7 +119,7 @@ class FilterTable extends React.Component {
             label="Search for column name,type"
             onChange ={this.filterTable}
             InputProps={{
-              disableUnderline: true,
+              //disableUnderline: true,
               startAdornment: (
                 <InputAdornment position="start">
                   <SearchIcon color='primary'/>
@@ -150,7 +150,7 @@ FilterTable.propTypes = {
 
 const mapStateToProps=({screenConfiguration={}})=>{
   const {preparedFinalObject={}}=screenConfiguration;
-  const {connections={},columnFilter={}}=preparedFinalObject;
+  const {connections={}}=preparedFinalObject;
   return {
     
   }

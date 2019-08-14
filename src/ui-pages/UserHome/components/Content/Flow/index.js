@@ -12,6 +12,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import flowComponents from "../../../../../ui-config/flowComponents";
 import Component from "./components/Component";
 import DropLocation from "./components/DropLocation";
+import Select from 'react-select';
 import jsplumb from "jsplumb";
 import $ from "jquery"
 import './dashboard.css';
@@ -56,6 +57,7 @@ const styles = theme => ({
 var hasNew = false;
 var previousLength = -1;
 
+
 class Flow extends React.Component {
   state = {
     copyFlowComponents: [],
@@ -64,6 +66,7 @@ class Flow extends React.Component {
     columnTab:'',
     table:'',
     filterTab:false,
+    connectionName:''
   };
   
 
@@ -190,26 +193,37 @@ class Flow extends React.Component {
       dataTab:true
     });
   }
+
+  dataColumn = async (e)=>{
+    console.log('data column selected', e.value);
+    let requestBody={
+      ajax:"get",
+      action:"getAllTables",
+      connectionName:this.state.connectionName,
+      dataBasename:e.value
+    };
+    const allTablesResponse=await httpRequest({endPoint:"/JDBCDeatilsServlet",method:"post",requestBody});
+    console.log("get all tablet in this",allTablesResponse);
+    this.props.setAppData('dataTableFilter', allTablesResponse );
+    this.setState({filterTab:true})
+  }
   
   handleDropDown = name => async event =>{
     if(name=='table'){
-      console.log('event target value', event.target.value);
-         
       this.setState({
         ...this.state,
         [name]: event.target.value,
+        connectionName:event.target.value
       });
         const { setAppData } = this.props;
         let requestBody={
           ajax:"get",
           action:"getAllSchemas",
           connectionName:event.target.value,
-          dataBasename:"azkaban",
-          table:"job_dv_results"
         };
         const allDatabaseResponse=await httpRequest({endPoint:"/JDBCDeatilsServlet",method:"post",requestBody});
         setAppData('columnFilter', allDatabaseResponse );
-        this.setState({filterTab:true})
+        
     }
     if(name=='columnTab'){
       this.setState({
@@ -220,9 +234,11 @@ class Flow extends React.Component {
   };
 
   render() {
-    const { classes, connections, columnFilter, dataDropDown } = this.props;
+    const { classes, connections, columnFilter, dataDropDown, dataTableFilter } = this.props;
     const { copyFlowComponents, containerTab, dataTab, columnTab, table, filterTab } = this.state;
     const { moveComponent, showData, showConfig } = this;
+    const options = [];
+    columnFilter.length>0 && columnFilter.map(item => options.push({value:item, label:item}));
     return (
       <div className={classes.root}>
         <DndProvider backend={HTML5Backend}>
@@ -280,11 +296,13 @@ class Flow extends React.Component {
                   Data Source Connection
                 </option>
                 {connections.length>0 && 
-                connections.map(item=> <option value={item.connectionName}>{item.connectionName}</option>)}
+                  connections.map(item=> <option value={item.connectionName}>{item.connectionName}</option>)} 
               </NativeSelect>
               </FormControl>
+              <Select options={options} onChange={this.dataColumn}/>
             </div>
-            {filterTab ? <FilterTable columnFilter={columnFilter}/>:''}
+            
+            {filterTab ? <FilterTable dataTableFilter={dataTableFilter}/>:''}
           </div>
           <div className={dataTab?'show':'hide'}>
             <div className='dataDisplayTab'>
@@ -320,9 +338,9 @@ class Flow extends React.Component {
 
 const mapStateToProps=({screenConfiguration={}})=>{
   const {preparedFinalObject={}}=screenConfiguration;
-  const {connections={},columnFilter={},dataDropDown={}}=preparedFinalObject;
+  const {connections={},columnFilter={},dataDropDown={},dataTableFilter={}}=preparedFinalObject;
   return {
-    connections, columnFilter, dataDropDown
+    connections, columnFilter, dataDropDown, dataTableFilter
   }
 }
 
