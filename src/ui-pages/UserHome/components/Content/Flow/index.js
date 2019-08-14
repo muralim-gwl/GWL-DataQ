@@ -79,7 +79,7 @@ class Flow extends React.Component {
     requestBody={
       ajax:"get",
       action:"getAllSchemas",
-      connectionName:"my_table"
+      connectionName:"my_table3"
     };
     const allDatabaseResponse=await httpRequest({endPoint:"/JDBCDeatilsServlet",method:"post",requestBody});
     console.log("get all database tables",allDatabaseResponse);
@@ -87,8 +87,8 @@ class Flow extends React.Component {
     requestBody={
       ajax:"get",
       action:"getAllTables",
-      connectionName:"my_table",
-      dataBasename:"azkaban"
+      connectionName:"my_table3",
+      dataBasename:"dataq"
     };
     const allTablesResponse=await httpRequest({endPoint:"/JDBCDeatilsServlet",method:"post",requestBody});
     console.log("get all tables",allTablesResponse);
@@ -96,9 +96,9 @@ class Flow extends React.Component {
     requestBody={
       ajax:"get",
       action:"getAllColumns",
-      connectionName:"my_table",
-      dataBasename:"azkaban",
-      table:"job_dv_results"
+      connectionName:"my_table3",
+      dataBaseName:"dataq",
+      table:"flow_details"
     };
     const allSampleResponse=await httpRequest({endPoint:"/JDBCDeatilsServlet",method:"post",requestBody});
     console.log("get sample data",allSampleResponse);

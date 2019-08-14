@@ -10,7 +10,8 @@ const getToken = () => {
 
 let axiosInstances = {
   instanceOne: axios.create({
-    baseURL: window.location.origin,
+    baseURL: "http://dataq-automation-alb-1598668034.us-east-1.elb.amazonaws.com:8083/",
+    // window.location.origin,
     headers: {
       "Content-Type": "application/json"
     }

@@ -2,7 +2,6 @@
   "name": "GWL-DataQ",
   "version": "0.1.0",
   "private": true,
-  "proxy":"http://dataq-automation-alb-1598668034.us-east-1.elb.amazonaws.com:8083/",
   "dependencies": {
     "@material-ui/core": "^4.2.0",
     "@material-ui/icons": "^4.2.1",
