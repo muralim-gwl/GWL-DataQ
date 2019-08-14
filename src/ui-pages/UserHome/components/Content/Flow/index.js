@@ -96,9 +96,9 @@ class Flow extends React.Component {
     requestBody={
       ajax:"get",
       action:"getAllColumns",
-      connectionName:"my_table3",
+      connectionName:"my_table",
       dataBaseName:"dataq",
-      table:"flow_details"
+      table:"projects"
     };
     const allSampleResponse=await httpRequest({endPoint:"/JDBCDeatilsServlet",method:"post",requestBody});
     console.log("get sample data",allSampleResponse);
