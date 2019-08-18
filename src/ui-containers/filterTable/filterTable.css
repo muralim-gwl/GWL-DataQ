@@ -1,0 +1,129 @@
+.filterContainer{
+    width: 386px;
+    background: white;
+}
+.filterSelect{
+    display: flex;
+    justify-content: space-between;
+    padding: 3%;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+.filterAdd{
+    border: 1px solid #7AD590;
+    background: #7AD590;
+    color: white;
+    width: 29%;
+    /* padding: 2% 4%; */
+    height: 52px;
+    border-radius: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 1px 3px 12px #7AD590;
+    font-size: 20px;
+}
+
+.filterHeader{
+    padding: 2% 4px;
+    color: #252424;
+}
+
+.filterContent{
+    padding: 1% 4%;
+    box-shadow: 1px 3px 12px #bdcec1;
+    border-radius: 13px;
+    overflow: hidden;
+    overflow-y: scroll;
+    margin: 5% 4%;
+    height: 130px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+  input[type=checkbox] {
+    display: block;
+    margin: 0.2em;
+    cursor: pointer;
+    padding: 0.2em;
+  }
+  
+  input[type=checkbox] {
+    display: none;
+  }
+  
+  input[type=checkbox] +:before {
+    content: "\2714";
+    border-radius: 0.2em;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    padding-left: 0.2em;
+    padding-bottom: 0.3em;
+    margin-right: 0.2em;
+    vertical-align: bottom;
+    color: transparent;
+    transition: .2s;
+    box-shadow: 1px 3px 8px #8d9c91;
+  }
+  
+  input[type=checkbox] +:active:before {
+    transform: scale(0);
+  }
+  
+  input[type=checkbox]:checked +:before {
+    background: #5AADFF;
+    border-color: #5AADFF;
+    color: #fff;
+  }
+  
+.filterRow{
+    margin: 2% 0%;
+    font-size: 14px;
+}
+
+.icon{
+    display: inline;
+    padding-left: 8%;
+}
+
+.filterSearch{
+    display: flex;
+    justify-content: space-between;
+    padding: 3% 4%;
+}
+
+
+.filterInput input{
+    width: 143%;
+    height: 105%;
+    outline: none;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    display: inline-block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 23px;
+}
+
+.filterInput input::placeholder{
+    font-size: 18px;
+}
