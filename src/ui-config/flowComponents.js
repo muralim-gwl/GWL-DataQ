@@ -3,6 +3,7 @@ const flowComponents=[
     name:"Input Source",
     icon:"/assets/images/svg_components/input.svg",
     hasOutput:true,
+    type:"InputSource"
   },
   {
     name:"Output Source",
