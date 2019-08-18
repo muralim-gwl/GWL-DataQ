@@ -90,12 +90,12 @@ export const httpRequest = async ({
       return response.data;
     }
   } catch (error) {
-    const { data, status } = error.response;
-    if (status === 400 && data === "") {
-      apiError = "INVALID_TOKEN";
-    } else {
-      apiError = data;
-    }
+    // const { data, status } = error.response;
+    // if (status === 400 && data === "") {
+    //   apiError = "INVALID_TOKEN";
+    // } else {
+    //   apiError = data;
+    // }
     if (hasSpinner) {
       store.dispatch(prepareFinalObject("spinner", false));
     }
