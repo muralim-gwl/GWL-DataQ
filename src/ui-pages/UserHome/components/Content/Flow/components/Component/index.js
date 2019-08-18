@@ -8,7 +8,8 @@ const Component = ({
   top = 0,
   copyComponent = false,
   cursor,
-  component
+  component,
+  onClick=null
 }) => {
   const [{ isDragging }, drag] = useDrag({
     item: { index, left, top, copyComponent, type: `component` },
@@ -30,6 +31,7 @@ const Component = ({
         <img
           src={component.icon}
           alt={component.name}
+          onClick={(e)=>onClick && onClick(component.type)}
         />
       </div>
     </div>
