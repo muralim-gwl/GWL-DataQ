@@ -6,7 +6,8 @@ const DropLocation = ({
   components,
   classes,
   moveComponent,
-  copyFlowComponents = []
+  copyFlowComponents = [],
+  setSelectedComponent
 }) => {
   const [, drop] = useDrop({
     accept: `component`,
@@ -32,6 +33,7 @@ const DropLocation = ({
             component={component}
             index={key}
             copyComponent
+            onClick={setSelectedComponent}
           />
         );
       })}
