@@ -52,7 +52,7 @@ class DataSourceTable extends React.Component {
           accessor:'Type'
         },  
         {
-          Header:'id',
+          Header:'Id',
           accessor:'id'
         },  
         {
