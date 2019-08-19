@@ -1,5 +1,5 @@
 {
-  flowComponents:[
+  "flowComponents":[
    {
       "name": "Input Source",
       "icon": "/assets/images/svg_components/input.svg",
