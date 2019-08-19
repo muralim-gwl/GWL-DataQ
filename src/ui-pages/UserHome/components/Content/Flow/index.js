@@ -25,12 +25,13 @@ const styles = theme => ({
     // width: "100vw"
   },
   paper: {
-    // overflow: "scroll",
-    minHeight: "85vh"
+    overflow: "scroll",
+    minHeight: "85vh",
+    zIndex:"2"
   },
   content: {
     minHeight: "85vh",
-    width: "100vw",
+    // width: "100vw",
     // overflow: "scroll",
     position: "relative"
   },
@@ -47,7 +48,8 @@ const styles = theme => ({
     background: "white",
     width: "100%",
     height:"45%",
-    overflow:"scroll"
+    overflow:"scroll",
+    zIndex:"3"
   }
 });
 
