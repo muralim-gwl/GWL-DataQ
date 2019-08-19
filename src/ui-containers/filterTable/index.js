@@ -6,6 +6,7 @@ import IconButton from "@material-ui/core/IconButton";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import SearchIcon from "@material-ui/icons/Search";
 import TextField from '@material-ui/core/TextField';
+import { httpRequest} from "../../ui-utils/api";
 import {mapDispatchToProps} from "../../ui-utils/commons";
 import {connect} from "react-redux";
 import PropTypes from 'prop-types';
@@ -86,8 +87,9 @@ class FilterTable extends React.Component {
     }
      
   }
-  addSelectedColumn = ()=>{
-    const { setAppData } = this.props;
+  addSelectedColumn = async ()=>{
+    const { setAppData, enableData } = this.props;
+    enableData();
     setAppData('dataDropDown', this.state.optionsChecked);
   }
 

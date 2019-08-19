@@ -101,7 +101,6 @@ class ConnectionTable extends React.Component {
 
   }
   filterConnectionTable=(e)=>{
-   console.log('this is data filter');
    const searchText = e.target.value;
    if(searchText.length == 0){
        this.setState({dataFilter:this.state.dataDefault})

@@ -40,6 +40,11 @@ const styles = theme => ({
     zIndex: "1000",
     background: "white",
     width: "100%"
+  },
+  count:{
+    padding: "1.2%",
+    fontSize:"14px",
+    fontWeight:"500",
   }
 });
 
@@ -58,8 +63,10 @@ class InputSource extends React.Component {
     table: "",
     filterTab: false,
     connectionName: "",
-    selectedTab: 0
-  };
+    selectedTab: 0,
+    active:true,
+    dataBaseName:''
+    };
 
   dataColumn = async e => {
     console.log("data column selected", e.value);
@@ -76,7 +83,7 @@ class InputSource extends React.Component {
     });
     console.log("get all tablet in this", allTablesResponse);
     this.props.setAppData("dataTableFilter", allTablesResponse);
-    this.setState({ filterTab: true });
+    this.setState({ filterTab: true, dataBaseName: e.value });
   };
 
   handleDropDown = name => async event => {
@@ -104,6 +111,21 @@ class InputSource extends React.Component {
         ...this.state,
         [name]: event.target.value
       });
+      const { setAppData } = this.props;
+      let requestBody={
+      ajax:"get",
+      action:"getAllColumns",
+      table:event.target.value,
+      dataBaseName:this.state.dataBaseName,
+      connectionName: this.state.connectionName
+      };
+      const allSampleResponse=await httpRequest({
+        endPoint:"/JDBCDeatilsServlet",
+        method:"post",
+        requestBody
+      });
+      console.log("get sample data",allSampleResponse);
+      setAppData("tableData", allSampleResponse);
     }
   };
 
@@ -112,7 +134,9 @@ class InputSource extends React.Component {
       selectedTab: newValue
     });
   };
-
+  enableData = () => {
+    this.setState({ active: false })
+  }
   render() {
     const {
       classes,
@@ -122,7 +146,7 @@ class InputSource extends React.Component {
       dataTableFilter
     } = this.props;
     const { handleChange } = this;
-    const { columnTab, table, filterTab, selectedTab } = this.state;
+    const { columnTab, table, filterTab, selectedTab, active } = this.state;
     const options = [];
     columnFilter.length > 0 &&
       columnFilter.map(item => options.push({ value: item, label: item }));
@@ -136,7 +160,7 @@ class InputSource extends React.Component {
           classes={{ root: classes.tabs }}
         >
           <Tab label="Config" {...a11yProps(0)} />
-          <Tab label="Data" {...a11yProps(1)} />
+          <Tab label="Data" {...a11yProps(1)} disabled={active} />
         </Tabs>
         <div
           style={{ marginTop: "48px" }}
@@ -168,9 +192,14 @@ class InputSource extends React.Component {
               </NativeSelect>
             </FormControl>
             <Select options={options} onChange={this.dataColumn} />
+            <span className={classes.count}>
+              {dataDropDown.length > 0
+                ? dataDropDown.length + " Tables"
+                : "0 Tables"}{" "}
+            </span>
           </div>
 
-          {filterTab && <FilterTable dataTableFilter={dataTableFilter} />}
+          {filterTab && <FilterTable dataTableFilter={dataTableFilter} enableData={this.enableData}  />}
         </div>
         <div
           style={{ marginTop: "48px" }}
