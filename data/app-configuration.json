@@ -5,14 +5,14 @@
       "icon": "/assets/images/svg_components/input.svg",
       "hasOutput": true,
       "type": "InputSource",
-      "active":false
+      "active":true
    },
    {
       "name": "Data Compare",
       "icon": "/assets/images/svg_components/Data Compare.svg",
       "hasInput": true,
       "hasOutput": true,
-      "active":false
+      "active":true
    },
    {
       "name": "Group by",
