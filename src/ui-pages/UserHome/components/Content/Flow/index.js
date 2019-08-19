@@ -25,13 +25,13 @@ const styles = theme => ({
     // width: "100vw"
   },
   paper: {
-    overflow: "scroll",
+    // overflow: "scroll",
     minHeight: "85vh"
   },
   content: {
     minHeight: "85vh",
-    width: "100%",
-    overflow: "scroll",
+    width: "100vw",
+    // overflow: "scroll",
     position: "relative"
   },
   formControl: {
