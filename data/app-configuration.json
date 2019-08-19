@@ -4,7 +4,8 @@
       "name": "Input Source",
       "icon": "/assets/images/svg_components/input.svg",
       "hasOutput": true,
-      "type": "InputSource"
+      "type": "InputSource",
+      "active":false
    },
    {
       "name": "Data Compare",
