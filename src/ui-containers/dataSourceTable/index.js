@@ -16,6 +16,7 @@ class DataSourceTable extends React.Component {
   render() {
     const { tableData } = this.props;
     const data=[];
+    const columns = [];
     if(_.isEmpty(tableData)){
     }else{
       tableData.sampleData.map(item => {
@@ -32,59 +33,23 @@ class DataSourceTable extends React.Component {
           version:item.version
         });
     
+    });
+    const props = Object.keys(data[0]);
+    tableData.schema.map((item,i)=>{
+      columns.push({
+       Header:item.columnName,
+       accessor:props[i]
+      })
     })
     }
-      const columns = [
-        {
-          Header:'Active',
-          accessor:'Active'
-        },
-        {
-          Header:'Time',
-          accessor:'Time'
-        },  
-        {
-          Header:'Description',
-          accessor:'Description'
-        }, 
-        {
-          Header:'Type',
-          accessor:'Type'
-        },  
-        {
-          Header:'Id',
-          accessor:'id'
-        },  
-        {
-          Header:'Last Modified',
-          accessor:'modified'
-        }, 
-        {
-          Header:'Modified Time',
-          accessor:'time'
-        },  
-        {
-          Header:'Name',
-          accessor:'name'
-        },  
-        {
-          Header:'Setting Blob',
-          accessor:'setting'
-        },  
-        {
-          Header:'Version',
-          accessor:'version'
-        },
-      ]
-
     return (
      
       <div>
          <ReactTable
             data={data}
             columns={columns}
-            minRows={0}
-            defaultPageSize={5}
+            minRows={1}
+            defaultPageSize={10}
             style={{
               height: "298px" // This will force the table body to overflow and scroll, since there is not enough room
             }}
