@@ -123,6 +123,7 @@ class InputSource extends React.Component {
     if (name === "columnTab") {
       this.setState({
         ...this.state,
+        columnTab:event.target.value,
         [name]: event.target.value
       });
       const { setAppData } = this.props;
@@ -151,6 +152,9 @@ class InputSource extends React.Component {
   enableData = () => {
     this.setState({ active: false })
   }
+  clearSelect = () => {
+    this.setState({columnTab:''})
+  }
   render() {
     const {
       classes,
@@ -164,7 +168,6 @@ class InputSource extends React.Component {
     const options = [];
     columnFilter.length > 0 &&
       columnFilter.map(item => options.push({ value: item, label: item }));
-      console.log('db name',defaultSelect);
     return (
       <div className={classes.root}>
         <Tabs
@@ -214,7 +217,7 @@ class InputSource extends React.Component {
             </span>
           </div>
 
-          {filterTab && <FilterTable dataTableFilter={dataTableFilter} enableData={this.enableData} checkBox={checkBox} />}
+          {filterTab && <FilterTable dataTableFilter={dataTableFilter} enableData={this.enableData} clearSelect={this.clearSelect} checkBox={checkBox} />}
         </div>
         <div
           style={{ marginTop: "48px" }}

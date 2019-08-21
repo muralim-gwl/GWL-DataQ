@@ -91,8 +91,9 @@ class FilterTable extends React.Component {
      
   }
   addSelectedColumn = async ()=>{
-    const { setAppData, enableData } = this.props;
+    const { setAppData, enableData,clearSelect } = this.props;
     enableData();
+    clearSelect();
     setAppData('dataDropDown', this.state.optionsChecked);
     setAppData('tableData', []);
     
