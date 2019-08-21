@@ -65,11 +65,12 @@ class InputSource extends React.Component {
     connectionName: "",
     selectedTab: 0,
     active:true,
-    dataBaseName:''
+    dataBaseName:'',
+    defaultSelect:[],
+    checkBox:''
     };
 
   dataColumn = async e => {
-    console.log("data column selected", e.value);
     let requestBody = {
       ajax: "get",
       action: "getAllTables",
@@ -83,7 +84,13 @@ class InputSource extends React.Component {
     });
     console.log("get all tablet in this", allTablesResponse);
     this.props.setAppData("dataTableFilter", allTablesResponse);
-    this.setState({ filterTab: true, dataBaseName: e.value });
+    this.props.setAppData('dataDropDown', []);
+    this.setState({ 
+      filterTab: true, 
+      dataBaseName: e.value,
+      checkBox: false, 
+      active: true,
+      defaultSelect:[{label:e.value, value: e.value}] });
   };
 
   handleDropDown = name => async event => {
@@ -105,6 +112,13 @@ class InputSource extends React.Component {
         requestBody
       });
       setAppData("columnFilter", allDatabaseResponse);
+      setAppData('dataDropDown', []);
+      this.setState({
+        filterTab: false,
+        defaultSelect: [],
+        active:true,
+        checkBox: false
+      })
     }
     if (name === "columnTab") {
       this.setState({
@@ -146,10 +160,11 @@ class InputSource extends React.Component {
       dataTableFilter
     } = this.props;
     const { handleChange } = this;
-    const { columnTab, table, filterTab, selectedTab, active } = this.state;
+    const { columnTab, table, filterTab, selectedTab, active, defaultSelect, checkBox } = this.state;
     const options = [];
     columnFilter.length > 0 &&
       columnFilter.map(item => options.push({ value: item, label: item }));
+      console.log('db name',defaultSelect);
     return (
       <div className={classes.root}>
         <Tabs
@@ -191,7 +206,7 @@ class InputSource extends React.Component {
                   ))}
               </NativeSelect>
             </FormControl>
-            <Select options={options} onChange={this.dataColumn} />
+            <Select options={options} value={defaultSelect} onChange={this.dataColumn} />
             <span className={classes.count}>
               {dataDropDown.length > 0
                 ? dataDropDown.length + " Tables"
@@ -199,7 +214,7 @@ class InputSource extends React.Component {
             </span>
           </div>
 
-          {filterTab && <FilterTable dataTableFilter={dataTableFilter} enableData={this.enableData}  />}
+          {filterTab && <FilterTable dataTableFilter={dataTableFilter} enableData={this.enableData} checkBox={checkBox} />}
         </div>
         <div
           style={{ marginTop: "48px" }}

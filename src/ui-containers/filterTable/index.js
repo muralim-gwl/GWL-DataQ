@@ -27,6 +27,9 @@ class FilterTable extends React.Component {
   }
   componentWillReceiveProps=(nextProps)=>{
     console.log('this is filter PROPS', nextProps.dataTableFilter);
+    if(nextProps.checkBox == false){
+      this.setState({checked:[], optionsChecked:[]})
+    }
     this.setState({dataDefault:nextProps.dataTableFilter, data: nextProps.dataTableFilter })
   }
 
@@ -91,6 +94,8 @@ class FilterTable extends React.Component {
     const { setAppData, enableData } = this.props;
     enableData();
     setAppData('dataDropDown', this.state.optionsChecked);
+    setAppData('tableData', []);
+    
   }
 
   render() {
