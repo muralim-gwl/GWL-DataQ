@@ -103,7 +103,7 @@ class DataCompare extends React.Component {
           <Tab label="Results" {...a11yProps(2)} />
         </Tabs>
         <div
-          style={{ marginTop: "48px" }}
+          style={{ marginTop: "24px" }}
           className={selectedTab === 0 ? "show" : "hide"}
         >
           <div className={classes.header}>Select Tables Which Will Compare Them</div>
@@ -136,13 +136,13 @@ class DataCompare extends React.Component {
           </div>
         </div>
         <div
-          style={{ marginTop: "48px" }}
+          style={{ marginTop: "24px" }}
           className={selectedTab === 1 ? "show" : "hide"}
         >
           This is Tab 2
         </div>
         <div
-          style={{ marginTop: "48px" }}
+          style={{ marginTop: "24px" }}
           className={selectedTab === 2 ? "show" : "hide"}
         >
           This is Tab 3
@@ -156,15 +156,9 @@ const mapStateToProps = ({ screenConfiguration = {} }) => {
   const { preparedFinalObject = {} } = screenConfiguration;
   const {
     connections = [],
-    columnFilter = [],
-    dataDropDown = [],
-    dataTableFilter = []
   } = preparedFinalObject;
   return {
     connections,
-    columnFilter,
-    dataDropDown,
-    dataTableFilter
   };
 };
 
