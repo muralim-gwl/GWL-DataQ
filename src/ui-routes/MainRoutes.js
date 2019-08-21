@@ -4,6 +4,7 @@ import Login from "../ui-pages/Login";
 import UserHome from "../ui-pages/UserHome";
 import Landing from "../ui-pages/Landing";
 import ConnectionTable from "../ui-containers/connectionTable";
+import DataCompare from "../ui-pages/UserHome/components/Content/Flow/components/DataCompare";
 
 const MainRoutes=()=>{
   return(
@@ -12,6 +13,7 @@ const MainRoutes=()=>{
       <Route path="/login" component={Login} />
       <Route path="/user-home" component={UserHome} />
       <Route path="/con" component={ConnectionTable} />
+      <Route path="/data" component={DataCompare} />
     </div>
   )
 }

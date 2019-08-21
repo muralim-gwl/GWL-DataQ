@@ -10,8 +10,7 @@ import PropTypes from 'prop-types';
 class DataSourceTable extends React.Component {
 
   state ={
-  
-}
+  }
 
   render() {
     const { tableData } = this.props;
@@ -32,7 +31,7 @@ class DataSourceTable extends React.Component {
           setting:item.settings_blob,
           version:item.version
         });
-    
+      
     });
     const props = Object.keys(data[0]);
     tableData.schema.map((item,i)=>{
@@ -41,6 +40,7 @@ class DataSourceTable extends React.Component {
        accessor:props[i]
       })
     })
+   
     }
     return (
      
@@ -49,7 +49,7 @@ class DataSourceTable extends React.Component {
             data={data}
             columns={columns}
             minRows={1}
-            defaultPageSize={10}
+            defaultPageSize={5}
             style={{
               height: "298px" // This will force the table body to overflow and scroll, since there is not enough room
             }}
