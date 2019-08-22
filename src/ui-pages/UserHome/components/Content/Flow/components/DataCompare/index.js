@@ -12,7 +12,8 @@ const styles = theme => ({
   root: {
     display: "flex",
     flexDirection: "column",
-    background: "white"
+    background: "white",
+    width:"1000px"
   },
   header: {
     marginLeft: "1%",
@@ -91,9 +92,11 @@ class DataCompare extends React.Component {
     const { handleChange } = this;
     const { selectedTab } = this.state;
     const options = [];
+    const options2 = [];
     dataDropDown.length > 0 &&
       dataDropDown.map(item => options.push({ value: item, label: item }));
-      console.log('this is data drop down', dataDropDown);
+    dataDropDown.length > 0 &&
+      dataDropDown.map(item => options2.push({ value: item, label: item }));
     return (
       <div className={classes.root}>
         <Tabs
@@ -103,13 +106,13 @@ class DataCompare extends React.Component {
           aria-label="simple tabs example"
           classes={{ root: classes.tabs }}
         >
-          <Tab label="Mapping" {...a11yProps(0)} />
-          <Tab label="Compare" {...a11yProps(1)} />
+          <Tab label="Compare" {...a11yProps(0)} />
+          <Tab label="Mapping" {...a11yProps(1)} />
           <Tab label="Results" {...a11yProps(2)} />
         </Tabs>
         <div
           style={{ marginTop: "24px" }}
-          className={selectedTab === 0 ? "show" : "hide"}
+          className={selectedTab === 1 ? "show" : "hide"}
         >
           <div className={classes.header}>Select Tables Which Will Compare Them</div>
           <div className={classes.dataContainer}>
@@ -119,7 +122,7 @@ class DataCompare extends React.Component {
                     name="Table Name 1"
                     placeholder="Table Name"
                     value={this.state.multiValue1}
-                    options={this.state.filterOptions1}
+                    options={options2}
                     onChange={this.handleMultiChange1}
                     isMulti
                 />
@@ -142,7 +145,7 @@ class DataCompare extends React.Component {
         </div>
         <div
           style={{ marginTop: "24px" }}
-          className={selectedTab === 1 ? "show" : "hide"}
+          className={selectedTab === 0 ? "show" : "hide"}
         >
           This is Tab 2
         </div>

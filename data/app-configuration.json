@@ -11,8 +11,10 @@
       "name": "Data Compare",
       "icon": "/assets/images/svg_components/Data Compare.svg",
       "hasInput": true,
-      "hasOutput": true,
-      "active":true
+      "hasOutput": false,
+      "active":true,
+      "maximumConnection":2,
+      "type":"DataCompare"
    },
    {
       "name": "Group by",

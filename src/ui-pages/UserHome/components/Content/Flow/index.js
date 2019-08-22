@@ -17,7 +17,7 @@ const firstInstance = jsPlumb.getInstance();
 export const ItemTypes = {
   COMPONENT: "component"
 };
-
+const multiSelect =[0,0,0,0,0,0,0,0];
 const styles = theme => ({
   root: {
     display: "flex"
@@ -65,12 +65,15 @@ class Flow extends React.Component {
   moveComponent = (index, top, left, copyComponent) => {
     let { copyFlowComponents = [] } = this.state;
     let { flowComponents } = this.props;
+    
+    const id = flowComponents[index].name+(++multiSelect[index]);
     if (copyComponent) {
       hasNew = false;
       copyFlowComponents[index] = {
         ...copyFlowComponents[index],
         top,
-        left
+        left,
+        id
       };
     } else {
       this.setSelectedComponent(flowComponents[index].type);
@@ -79,7 +82,8 @@ class Flow extends React.Component {
       copyFlowComponents.push({
         ...flowComponents[index],
         top,
-        left
+        left,
+        id
       });
     }
     this.setState({
@@ -163,6 +167,7 @@ class Flow extends React.Component {
   }
 
   setSelectedComponent = type => {
+    console.log('thia ia xoming here');
     const { openComponentPopop } = this.state;
     this.toggleComponentPopup();
     if (openComponentPopop) {
@@ -178,6 +183,7 @@ class Flow extends React.Component {
   };
 
   render() {
+    console.log('copy flow component ',this.state.copyFlowComponents)
     const { classes, flowComponents } = this.props;
     const { copyFlowComponents, type, openComponentPopop } = this.state;
     const { moveComponent, setSelectedComponent } = this;
@@ -185,7 +191,7 @@ class Flow extends React.Component {
     const renderComponent = () => {
       if (type) {
         const Component = require(`./components/${type}`).default;
-        return <Component />;
+        return <Component  />;
       } else {
         return <div>No configuration</div>;
       }
