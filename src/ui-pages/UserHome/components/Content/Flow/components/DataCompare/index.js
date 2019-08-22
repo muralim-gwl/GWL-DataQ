@@ -85,10 +85,15 @@ class DataCompare extends React.Component {
  
   render() {
     const {
-      classes
+      classes,
+      dataDropDown
     } = this.props;
     const { handleChange } = this;
     const { selectedTab } = this.state;
+    const options = [];
+    dataDropDown.length > 0 &&
+      dataDropDown.map(item => options.push({ value: item, label: item }));
+      console.log('this is data drop down', dataDropDown);
     return (
       <div className={classes.root}>
         <Tabs
@@ -125,7 +130,7 @@ class DataCompare extends React.Component {
                     name="Table Name 2"
                     placeholder="Table Name"
                     value={this.state.multiValue2}
-                    options={this.state.filterOptions2}
+                    options={options}
                     onChange={this.handleMultiChange2}
                     isMulti
                 />
@@ -155,10 +160,10 @@ class DataCompare extends React.Component {
 const mapStateToProps = ({ screenConfiguration = {} }) => {
   const { preparedFinalObject = {} } = screenConfiguration;
   const {
-    connections = [],
+    dataDropDown = [],
   } = preparedFinalObject;
   return {
-    connections,
+    dataDropDown,
   };
 };
 
