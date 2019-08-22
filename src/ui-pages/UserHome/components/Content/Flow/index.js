@@ -4,13 +4,12 @@ import HTML5Backend from "react-dnd-html5-backend";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import { withStyles } from "@material-ui/core/styles";
-import flowComponents from "../../../../../ui-config/flowComponents";
 import Component from "./components/Component";
 import DropLocation from "./components/DropLocation";
 import jsplumb from "jsplumb";
 import $ from "jquery";
-import { mapDispatchToProps} from "../../../../../ui-utils/commons";
-import { httpRequest} from "../../../../../ui-utils/api";
+import { mapDispatchToProps } from "../../../../../ui-utils/commons";
+import { httpRequest } from "../../../../../ui-utils/api";
 import { connect } from "react-redux";
 const { jsPlumb } = jsplumb;
 const firstInstance = jsPlumb.getInstance();
@@ -26,12 +25,13 @@ const styles = theme => ({
   },
   paper: {
     overflow: "scroll",
-    minHeight: "85vh"
+    minHeight: "85vh",
+    zIndex: "2"
   },
   content: {
     minHeight: "85vh",
-    width: "100%",
-    overflow: "scroll",
+    // width: "100vw",
+    // overflow: "scroll",
     position: "relative"
   },
   formControl: {
@@ -46,8 +46,9 @@ const styles = theme => ({
     bottom: 0,
     background: "white",
     width: "100%",
-    height:"45%",
-    overflow:"scroll"
+    height: "45%",
+    overflow: "scroll",
+    zIndex: "3"
   }
 });
 
@@ -63,6 +64,7 @@ class Flow extends React.Component {
 
   moveComponent = (index, top, left, copyComponent) => {
     let { copyFlowComponents = [] } = this.state;
+    let { flowComponents } = this.props;
     if (copyComponent) {
       hasNew = false;
       copyFlowComponents[index] = {
@@ -161,12 +163,11 @@ class Flow extends React.Component {
   }
 
   setSelectedComponent = type => {
-    const {openComponentPopop}=this.state;
+    const { openComponentPopop } = this.state;
     this.toggleComponentPopup();
     if (openComponentPopop) {
-      this.setState({ type:null });
-    }
-    else {
+      this.setState({ type: null });
+    } else {
       this.setState({ type });
     }
   };
@@ -177,7 +178,7 @@ class Flow extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, flowComponents } = this.props;
     const { copyFlowComponents, type, openComponentPopop } = this.state;
     const { moveComponent, setSelectedComponent } = this;
 
@@ -199,20 +200,27 @@ class Flow extends React.Component {
             justify="flex-start"
             alignItems="stretch"
           >
-            <Grid item xs={12} md={3}>
+            <Grid item xs={12} md={4}>
               <Paper classes={{ root: classes.paper }}>
                 <Grid container>
                   {flowComponents.map((component, key) => {
+                    const active = component.hasOwnProperty("active")
+                      ? component.active
+                        ? true
+                        : false
+                      : true;
                     return (
                       <Grid key={key} item xs={6}>
-                        <Component component={component} index={key} />
+                        {active ? (
+                          <Component component={component} index={key} />
+                        ) : null}
                       </Grid>
                     );
                   })}
                 </Grid>
               </Paper>
             </Grid>
-            <Grid item xs={12} md={9}>
+            <Grid item xs={12} md={8}>
               <DropLocation
                 components={copyFlowComponents}
                 classes={{ root: classes.content }}
@@ -232,7 +240,10 @@ class Flow extends React.Component {
 }
 
 const mapStateToProps = ({ screenConfiguration = {} }) => {
-  return {};
+  const { preparedFinalObject = {} } = screenConfiguration;
+  const { appConfig = {} } = preparedFinalObject;
+  const { flowComponents = [] } = appConfig;
+  return { flowComponents };
 };
 
 export default connect(

@@ -9,6 +9,17 @@ import "./App.css";
 
 
 class App extends React.Component {
+  componentDidMount=async()=>{
+    const {setAppData}=this.props;
+    let appConfig=await fetch("https://raw.githubusercontent.com/muralimgwl/GWL-DataQ/dev/data/app-configuration.json?timestamp="+new Date().getTime())
+      .then(function(response) {
+        return response.json();
+      })
+      .catch(error => console.error(error));
+    // console.log(flowComponents);
+    setAppData("appConfig",appConfig)
+  }
+
   render() {
     const { spinner } = this.props;
     return (
