@@ -20,15 +20,15 @@ class DataSourceTable extends React.Component {
     }else{
       tableData.sampleData.map(item => {
         data.push({
-          Active:item.active,
-          Time:item.create_time,
-          Description:item.description,
-          Type:item.enc_type,
+          active:item.active,
+          create_time:item.create_time,
+          description:item.description,
+          enc_type:item.enc_type,
           id:item.id,
-          modified: item.last_modified_by,
-          time:item.modified_time,
+          last_modified_by: item.last_modified_by,
+          modified_time:item.modified_time,
           name:item.name,
-          setting:item.settings_blob,
+          settings_blob:item.settings_blob,
           version:item.version
         });
       
@@ -37,11 +37,12 @@ class DataSourceTable extends React.Component {
     tableData.schema.map((item,i)=>{
       columns.push({
        Header:item.columnName,
-       accessor:props[i]
+       accessor:item.columnName
       })
     })
    
     }
+    console.log('this is columns ', columns);
     return (
      
       <div>

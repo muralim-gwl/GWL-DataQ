@@ -167,7 +167,6 @@ class Flow extends React.Component {
   }
 
   setSelectedComponent = type => {
-    console.log('thia ia xoming here');
     const { openComponentPopop } = this.state;
     this.toggleComponentPopup();
     if (openComponentPopop) {

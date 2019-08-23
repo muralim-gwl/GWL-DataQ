@@ -35,6 +35,12 @@ const styles = theme => ({
     marginTop: "3.3%",
     cursor: "pointer",
     marginLeft: "1%"
+  },
+  commonTab: {
+    border: "1px solid #dcdbdb",
+    padding: "5px 16px",
+    background: "#fdfafa",
+    borderRadius: "12px",
   }
 });
 
@@ -97,6 +103,8 @@ class DataCompare extends React.Component {
       dataDropDown.map(item => options.push({ value: item, label: item }));
     dataDropDown.length > 0 &&
       dataDropDown.map(item => options2.push({ value: item, label: item }));
+    const commanOptions =  dataDropDown.filter(value => dataDropDown.includes(value));
+    console.log('comman', commanOptions);
     return (
       <div className={classes.root}>
         <Tabs
@@ -141,6 +149,17 @@ class DataCompare extends React.Component {
             <div className={classes.addImage}>
                 <img style={{ width: "70%" }} src='/assets/images/svg_components/add-icon.svg' alt='add' />
             </div>
+          </div>
+          <div style={{margin:'1%'}}>
+            {commanOptions.map(item => {
+              return (
+              <div style={{padding:'1%'}}>
+                <span className={classes.commonTab}>{item} </span>
+                <img src ='/assets/images/svg_components/Rectangle 46.svg' /> 
+                <span className={classes.commonTab}>{item}</span>
+              </div>
+              )
+            })}
           </div>
         </div>
         <div
