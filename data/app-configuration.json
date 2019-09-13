@@ -32,7 +32,8 @@
       "name": "Column Type",
       "icon": "/assets/images/svg_components/Column Type.svg",
       "hasInput": true,
-      "hasOutput": true
+      "hasOutput": true,
+      "type":"ColumnType"
    },
    {
       "name": "Join Data",
