@@ -27,6 +27,7 @@
       "icon": "/assets/images/svg_components/Filter Rows.svg",
       "hasInput": true,
       "hasOutput": true,
+      "type":"FilterRows"
    },
    {
       "name": "Column Type",
