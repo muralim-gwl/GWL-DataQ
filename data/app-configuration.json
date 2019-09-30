@@ -41,7 +41,8 @@
       "name": "Join Data",
       "icon": "/assets/images/svg_components/Join Data.svg",
       "hasInput": true,
-      "hasOutput": true
+      "hasOutput": true,
+      "type":"JoinData"
    },
    {
       "name": "Output Source",
