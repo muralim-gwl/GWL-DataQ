@@ -47,7 +47,8 @@
    {
       "name": "Output Source",
       "icon": "/assets/images/svg_components/Output.svg",
-      "hasInput": true
+      "hasInput": true,
+      "type":"OutputSource"
    },
    {
       "name": "Command",
