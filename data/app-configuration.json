@@ -2,14 +2,14 @@
   "flowComponents":[
    {
       "name": "Input Source",
-      "icon": "https://firebasestorage.googleapis.com/v0/b/gwl-dataq-e6f19.appspot.com/o/svg-components%2Finput%20(grey).svg?alt=media&token=6d0cbc77-d611-4f6c-b7de-635e3e3b0a01",
+      "icon": "/assets/images/components/input (grey).svg",
       "hasOutput": true,
       "type": "InputSource",
       "active":true
    },
    {
       "name": "Data Compare",
-      "icon": "https://firebasestorage.googleapis.com/v0/b/gwl-dataq-e6f19.appspot.com/o/svg-components%2FData%20Compare%20(grey).svg?alt=media&token=ef580b5e-dfed-41ba-aa71-2074d695aa47",
+      "icon": "/assets/images/components/Data Compare (grey).svg",
       "hasInput": true,
       "hasOutput": false,
       "active":true,
@@ -19,42 +19,42 @@
    },
    {
       "name": "Select Columns",
-      "icon": "https://firebasestorage.googleapis.com/v0/b/gwl-dataq-e6f19.appspot.com/o/svg-components%2FSelect%20Columns%20(grey).svg?alt=media&token=89253371-a3a2-425e-87d3-30faf8774c1d",
+      "icon": "/assets/images/components/Select Columns (grey).svg",
       "hasInput": true,
       "hasOutput": true,
        "type":"SelectColumns"
    },
    {
       "name": "Filter Rows",
-      "icon": "https://firebasestorage.googleapis.com/v0/b/gwl-dataq-e6f19.appspot.com/o/svg-components%2FFilter%20Rows%20(grey).svg?alt=media&token=83aeedd3-18ad-422c-b684-9f497fba06d7",
+      "icon": "/assets/images/components/Filter Rows (grey).svg",
       "hasInput": true,
       "hasOutput": true,
       "type":"FilterRows"
    },
    {
       "name": "Column Type",
-      "icon": "https://firebasestorage.googleapis.com/v0/b/gwl-dataq-e6f19.appspot.com/o/svg-components%2FColumn%20Type%20(grey).svg?alt=media&token=0b8113df-9d66-4ebf-8714-b64ad4db83e0",
+      "icon": "/assets/images/components/Column Type (grey).svg",
       "hasInput": true,
       "hasOutput": true,
       "type":"ColumnType"
    },
    {
       "name": "Text Formatting",
-      "icon": "https://firebasestorage.googleapis.com/v0/b/gwl-dataq-e6f19.appspot.com/o/svg-components%2FText%20Formatting%20(grey).svg?alt=media&token=bb1084cc-458f-4e8d-b3f4-2603e80a4af0",
+      "icon": "/assets/images/components/Text Formatting (grey).svg",
       "hasInput": true,
       "hasOutput": true,
       "type":"TextFormatting"
    },
    {
       "name": "Replace Text",
-      "icon": "https://firebasestorage.googleapis.com/v0/b/gwl-dataq-e6f19.appspot.com/o/svg-components%2FReplace%20Text%20(grey).svg?alt=media&token=06962789-fd28-4948-9e69-e2a371ea3401",
+      "icon": "/assets/images/components/Replace Text (grey).svg",
       "hasInput": true,
       "hasOutput": true,
       "type":"ReplaceText"
    },
    {
       "name": "Command",
-      "icon": "https://firebasestorage.googleapis.com/v0/b/gwl-dataq-e6f19.appspot.com/o/svg-components%2FCommand%20(grey).svg?alt=media&token=155955ae-e370-434e-86b5-9a4e153accf5",
+      "icon": "/assets/images/components/Command (grey).svg",
       "hasInput": true,
       "hasOutput": true,
       "active":false
