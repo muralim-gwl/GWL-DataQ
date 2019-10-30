@@ -64,7 +64,8 @@
       "icon": "/assets/images/components/Remove Duplicates (grey).svg",
       "hasInput": true,
       "hasOutput": true,
-      "active":false
+      "active":false,
+     "type":"RemoveDuplicates"
    }
  ]
 }
