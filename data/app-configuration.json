@@ -58,6 +58,13 @@
       "hasInput": true,
       "hasOutput": true,
       "active":false
+   },
+   {
+      "name": "Remove Duplicates",
+      "icon": "/assets/images/components/Remove Duplicates (grey).svg",
+      "hasInput": true,
+      "hasOutput": true,
+      "active":false
    }
  ]
 }
