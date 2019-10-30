@@ -51,6 +51,12 @@
       "hasInput": true,
       "hasOutput": true,
       "type":"ReplaceText"
+   },   {
+      "name": "Remove Duplicates",
+      "icon": "/assets/images/components/Remove Duplicates (grey).svg",
+      "hasInput": true,
+      "hasOutput": true,
+      "type":"RemoveDuplicates"
    },
    {
       "name": "Command",
@@ -58,13 +64,6 @@
       "hasInput": true,
       "hasOutput": true,
       "active":false
-   },
-   {
-      "name": "Remove Duplicates",
-      "icon": "/assets/images/components/Remove Duplicates (grey).svg",
-      "hasInput": true,
-      "hasOutput": true,
-      "type":"RemoveDuplicates"
    }
  ]
 }
