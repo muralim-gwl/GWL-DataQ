@@ -60,7 +60,7 @@
    },
      {
       "name": "Data Quality",
-      "icon": "/assets/images/components/Group by (grey).svg",
+      "icon": "/assets/images/components/Data Quality (grey).svg",
       "hasInput": true,
       "hasOutput": false,
       "type":"DataQuality",
