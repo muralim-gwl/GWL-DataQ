@@ -66,6 +66,13 @@
       "type":"DataQuality",
       "isRoot":true
    },
+    {
+      "name": "Data Profile",
+      "icon": "/assets/images/components/Group by (grey).svg",
+      "hasInput": true,
+      "hasOutput": false,
+      "type":"DataProfile"
+   },
    {
       "name": "Command",
       "icon": "/assets/images/components/Command (grey).svg",
