@@ -71,7 +71,8 @@
       "icon": "/assets/images/components/Group by (grey).svg",
       "hasInput": true,
       "hasOutput": false,
-      "type":"DataProfile"
+      "type":"DataProfile",
+      "isRoot":true
    },
    {
       "name": "Command",
