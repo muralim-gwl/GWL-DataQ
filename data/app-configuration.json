@@ -68,7 +68,7 @@
    },
     {
       "name": "Data Profile",
-      "icon": "/assets/images/components/Group by (grey).svg",
+      "icon": "/assets/images/components/Data Profile (grey).svg",
       "hasInput": true,
       "hasOutput": false,
       "type":"DataProfile",
