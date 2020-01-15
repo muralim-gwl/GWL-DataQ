@@ -28,8 +28,7 @@
       "name": "Filter Rows",
       "icon": "/assets/images/components/Filter Rows (grey).svg",
       "hasInput": true,
-      "hasOutput": true,
-      "type":"FilterRows"
+      "hasOutput": true
    },
    {
       "name": "Column Type",
@@ -42,15 +41,13 @@
       "name": "Text Formatting",
       "icon": "/assets/images/components/Text Formatting (grey).svg",
       "hasInput": true,
-      "hasOutput": true,
-      "type":"TextFormatting"
+      "hasOutput": true
    },
    {
       "name": "Replace Text",
       "icon": "/assets/images/components/Replace Text (grey).svg",
       "hasInput": true,
-      "hasOutput": true,
-      "type":"ReplaceText"
+      "hasOutput": true
    },   {
       "name": "Remove Duplicates",
       "icon": "/assets/images/components/Remove Duplicates (grey).svg",
