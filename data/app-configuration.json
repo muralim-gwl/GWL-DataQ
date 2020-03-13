@@ -22,7 +22,8 @@
       "icon": "/assets/images/components/Select Columns (grey).svg",
       "hasInput": true,
       "hasOutput": true,
-       "type":"SelectColumns"
+      "type":"SelectColumns",
+      "isNavigate":true
    },
    {
       "name": "Column Type",
