@@ -1,4 +1,18 @@
 {
+  "clients":{
+    "dataq":{
+      "title":"DataQcd",
+      "headerName":"DataQ",
+      "loginLogo":"/assets/images/svg_components/logo.svg",
+      "headerLogo":"/assets/images/svg_components/logo.svg"
+    },
+    "cygnetInfotech":{
+      "title":"Cygnet Infotech",
+      "headerName":"Version (1.0 Beta)",
+      "loginLogo":"/assets/images/svg_components/logo-white.png",
+      "headerLogo":"/assets/images/svg_components/logo-white.png"
+    }
+  },
   "flowComponents":[
    {
       "name": "Input Source",
