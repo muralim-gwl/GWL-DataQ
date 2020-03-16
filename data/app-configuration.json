@@ -2,12 +2,14 @@
   "clients":{
     "dataq":{
       "title":"DataQcd",
+      "favicon":"/assets/images/svg_components/logo.svg",
       "headerName":"DataQ",
       "loginLogo":"/assets/images/svg_components/logo.svg",
       "headerLogo":"/assets/images/svg_components/logo.svg"
     },
     "cygnetInfotech":{
       "title":"Cygnet Infotech",
+      "favicon":"/assets/images/svg_components/logo-white.png",
       "headerName":"Version (1.0 Beta)",
       "loginLogo":"/assets/images/svg_components/logo-white.png",
       "headerLogo":"/assets/images/svg_components/logo-white.png"
